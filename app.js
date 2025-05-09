@@ -7,7 +7,7 @@ const route = require('./Routes/Route');
 
 dotenv.config();
 const corsOptions = {
-    origin: 'https://facebook-front-i3f4haynh-kattaouis-projects.vercel.app',
+    origin: 'https://facebook-front-iota.vercel.app',
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
     credentials: true,
