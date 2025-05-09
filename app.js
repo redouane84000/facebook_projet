@@ -9,7 +9,9 @@ dotenv.config();
 const corsOptions = {
     origin: 'https://facebook-front-i3f4haynh-kattaouis-projects.vercel.app/',
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    credentials: true,
+    optionsSuccessStatus: 200   
 }
 
 app.use(cors(corsOptions));
