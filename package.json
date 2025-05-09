@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node page_inscription_backend/app.js",
+    "dev": "nodemon page_inscription_backend/app.js"
   },
   "keywords": [],
   "author": "",
