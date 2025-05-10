@@ -17,9 +17,27 @@ const db = mysql.createConnection({
 db.connect((err) => {
     if (err) {
         console.error('Erreur de connexion à la base de données:', err);
-        return;
+        setTimeout(handleDisconnect, 2000);
+    }else{
+        console.log('Connexion à la base de données réussie');
     }
-    console.log('Connexion à la base de données réussie');
-});
+}); 
+
+db.on('error', (err) => {
+    console.error('Erreur de connexion à la base de données:', err);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      console.error('La connexion à la base de données a été perdue. Tentative de reconnexion...');
+         handleDisconnect();
+    }else{
+        throw err;
+    }
+}); 
+
+
+
+
+
+
+
 
 module.exports = db;
